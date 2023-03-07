@@ -9,6 +9,11 @@ Los puertos de entrada que menos problemas me dieron fueron el 9999 y el 8080, p
 
 Ideas de mejora a largo plazo: chats privados, canales y conexión desde redes diferentes... Lo conseguiremos?
 
+Pero vamos por pasos:
+
+1. Refactorizar: pendiente
+2. Separar la lógica de la vista (MVC): pendiente
+
 ## License
 
 Copyright 2023 Carlos Ferreiro
