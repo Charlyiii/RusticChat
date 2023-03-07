@@ -48,7 +48,7 @@ class MarcoCliente extends JFrame{
 		setTitle("Cliente");
 		setLocation(700,300);
 		setSize(500, 500);
-		LaminaCliente miLamina=new LaminaCliente(ipServer, inputPort);
+		LaminaCliente miLamina=new LaminaCliente(ipServer, inputPort, outputPort);
 		add(miLamina);
 		setVisible(true);
 		
@@ -91,7 +91,7 @@ class MarcoCliente extends JFrame{
 class LaminaCliente extends JPanel implements Runnable { 
 	
 	@SuppressWarnings({ "rawtypes"})
-	public LaminaCliente(String ipServer, int inputPort) {
+	public LaminaCliente(String ipServer, int inputPort, int outputPort) {
 		
 		this.inputPort = inputPort;
 		
@@ -139,7 +139,7 @@ class LaminaCliente extends JPanel implements Runnable {
 		//--------------VIDEO 1 --------------------------------------------
 				//Creamos una clase para almacenar toda la información	
 					
-					Socket miSocket=new Socket(ipServer, 9999); //ip sobremesa				
+					Socket miSocket=new Socket(ipServer, outputPort); //ip sobremesa				
 					//Creamos un objeto paquete para almacenar y enviar todos los datos
 					EnvioPaqueteDatos datos=new EnvioPaqueteDatos();
 					
@@ -189,28 +189,6 @@ class LaminaCliente extends JPanel implements Runnable {
 		//Debemos hacer que esté a la escucha también, Runnable
 		
 	}
-	//Para presionar enter y que funcione. Lo malo que hay que implementar todos los métodos. Podría probar con key adapter, pero ya hereda de JPanel
-	//LO hago arriba con clase anónima, en le JText
-//	@Override
-//	public void keyTyped(KeyEvent e) {
-//		// TODO Auto-generated method stub
-//		
-//	}
-//	//aasí hacemos que al darle a enter haga lo mismo que el botón
-//	@Override
-//	public void keyPressed(KeyEvent e) {
-//		// TODO Auto-generated method stub
-//		if(e.getKeyCode()==KeyEvent.VK_ENTER) {
-//			
-//			boton.doClick();  //si se presiona enter, el botón hace click
-//		}
-//	}
-//
-//	@Override
-//	public void keyReleased(KeyEvent e) {
-//		// TODO Auto-generated method stub
-//		
-//	}
 
 	@SuppressWarnings({ "unchecked", "resource" })
 	@Override
