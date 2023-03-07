@@ -94,14 +94,7 @@ class LaminaCliente extends JPanel implements Runnable {
 	public LaminaCliente(String ipServer, int inputPort, int outputPort) {
 		
 		this.inputPort = inputPort;
-		
-		
-		
-		//afregamos casilla para el nick
-		//nick=new JTextField(9);
-		//add(nick);
-		//Lo cambiamos por un JLabel para que no se pueda modificar después de iniciar el char
-		//Preguntamos el nombre al iniciar		
+			
 		nick=new JLabel(JOptionPane.showInputDialog("Introduce tu nick")); //Él lo hace con setText, es lo mismo
 		add(nick);
 	
@@ -162,6 +155,8 @@ class LaminaCliente extends JPanel implements Runnable {
 					ObjectOutputStream flujo=new ObjectOutputStream(miSocket.getOutputStream());
 					flujo.writeObject(datos);
 					
+					System.out.println("Hilo de envío: " + Thread.currentThread().getName());
+					
 					flujo.close();
 					
 					miSocket.close();
@@ -178,9 +173,9 @@ class LaminaCliente extends JPanel implements Runnable {
 		});
 		add(boton);
 		
-		//Sin usar Threads aquí iría todo el código de run
+		//Sin usar Threads no sirve, hace varias tareas a la vez y el thread tiene que quedarse a la espera
+		//Si se hace sin thread, no se crea la lámina, e incluso modifando el código para que se cree, no podría recibir y enviar a la vez
 		
-		//ejecutamos runnable
 		
 		Thread miHilo=new Thread(this);
 		
@@ -192,11 +187,13 @@ class LaminaCliente extends JPanel implements Runnable {
 
 	@SuppressWarnings({ "unchecked", "resource" })
 	@Override
-	public void run() { //seguramente funcione sin hilos como la otra
+	public void run() { 
 		// TODO Auto-generated method stub
 		try {
 			
-			ServerSocket miServidor=new ServerSocket(inputPort); //ojo puerto diferente de entrada. Coincide con el de salida del server
+			System.out.println("Dentro del run");
+			
+			ServerSocket miServidor=new ServerSocket(this.inputPort); //ojo puerto diferente de entrada. Coincide con el de salida del server
 			
 			Socket socketEntrada;
 			
@@ -204,8 +201,9 @@ class LaminaCliente extends JPanel implements Runnable {
 			
 			while(true) {
 				
-				
+				System.out.println("Hilo ejecutandose = A la esperaaaa");
 				socketEntrada=miServidor.accept();
+				System.out.println("Entrada aceptada");
 				
 				//-----------------------cuando se conecte un cliente, se podría mandar la ip al servidor, para que le diga a los demás que está
 				//System.out.println(InetAddress.getLocalHost().getHostAddress()); con esto obtenemos la ip 
