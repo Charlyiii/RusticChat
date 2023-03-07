@@ -225,7 +225,7 @@ class LaminaCliente extends JPanel implements Runnable {
 			EnvioPaqueteDatos paqueteRecibido;
 			
 			while(true) {
-				//me fallaba porque esto estaba fuera del while
+				
 				
 				socketEntrada=miServidor.accept();
 				
