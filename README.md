@@ -11,7 +11,7 @@ Ideas de mejora a largo plazo: chats privados, canales y conexión desde redes d
 
 Pero vamos por pasos:
 
-1. Refactorizar: pendiente
+1. Refactorizar: en proceso....
 2. Aplicar la S de SOLID (Principio de responsabilidad única): pendiente
 3. Separar la lógica de la vista (MVC): pendiente
 
