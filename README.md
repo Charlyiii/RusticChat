@@ -3,7 +3,9 @@ Proyecto de chat local simple en Java (en desarrollo)
 
 Empezado durante el curso de www.pildorasinformaticas.es con Eclipse, Java y Swing, y añadiéndole mejores por mi cuenta poco a poco.
 
-Además está en en fase borrador (aunque funcional, subo los .jar autoejectubles por si lo queréis probar), sin refactorizar ni aplicar ningún tipo de arquitectura de diseño y clases con muchas responsabilidades. La idea a corto plazo es limpiar el código para hacer más fácil su escalabilidad.
+Comenzamos en fase borrador (aunque funcional, subo los .jar autoejectubles por si lo queréis probar), sin refactorizar ni aplicar ningún tipo de arquitectura de diseño y clases con muchas responsabilidades. 
+
+Se irá limpiando el código para hacer más fácil su escalabilidad.
 
 Los puertos de entrada que menos problemas me dieron fueron el 9999 y el 8080, pero eso depende del servidor local de cada uno.
 
@@ -13,7 +15,7 @@ Pero vamos por pasos:
 
 1. Refactorizar: en proceso....
 2. Aplicar la S de SOLID (Principio de responsabilidad única): pendiente
-3. Separar la lógica de la vista (MVC): pendiente
+3. Separar la lógica de la vista (MVC): en proceso...
 
 ## License
 
