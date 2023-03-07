@@ -23,14 +23,12 @@ public class servidorChat {
 		// TODO Auto-generated method stub
 
 		MarcoServidor servidor=new MarcoServidor();
-		servidor.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+		servidor.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);		
 	}
-
 }
 
 @SuppressWarnings("serial")
-class MarcoServidor extends JFrame implements Runnable{
+class MarcoServidor extends JFrame {
 	
 	public MarcoServidor() {
 		//Refactorizar!!!!!!!!!! Quitar hilos!!! Ordenar!!! Separar en clases!!!
@@ -54,17 +52,6 @@ class MarcoServidor extends JFrame implements Runnable{
 		
 		//Sin usar Threads, aquí iría todo el código de run. Probar.
 		
-		Thread miHilo=new Thread(this);
-		
-		miHilo.start();
-			
-	}
-	
-	@Override
-	public void run() {  //Seguramente funcione sin hilos como la otra
-		// TODO Auto-generated method stub
-		
-			
 		try {
 			@SuppressWarnings("resource")
 			ServerSocket miServidor=new ServerSocket(inputPort); 
@@ -147,14 +134,13 @@ class MarcoServidor extends JFrame implements Runnable{
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) { //Esta nos serive para capturar la d eObjectInputStream
 			e.printStackTrace();
-		}
-		
+		}		
 	}
+	
 	
 	private JTextArea areatexto;
 	int outputPort;
 	int inputPort;
-	
-	
+		
 }
 
