@@ -17,6 +17,10 @@ Pero vamos por pasos:
 2. Aplicar la S de SOLID (Principio de responsabilidad única): pendiente
 3. Separar la lógica de la vista (MVC): en proceso...
 
+## Tecnologías:
+[![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)]()
+[![Eclipse](https://badgen.net/badge/icon/eclipse?icon=eclipse&label)](https://https://eclipse.org/)
+
 ## License
 
 Copyright 2023 Carlos Ferreiro
